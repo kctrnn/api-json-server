@@ -1,12 +1,35 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Iphone X"
+      "id": "4023479d-5a0a-4477-a56c-e06248175ec0",
+      "name": "Sausages",
+      "createAt": 1617467328379,
+      "updateAt": 1617467328379
     },
     {
-      "id": "2",
-      "name": "Laptop Dell"
+      "id": "511492e7-17f0-4ac4-beb9-e33024a6dd82",
+      "name": "Shoes",
+      "createAt": 1617467328379,
+      "updateAt": 1617467328379
+    },
+    {
+      "id": "59c58878-4e80-4dfb-ba40-2bb859be1ece",
+      "name": "Chips",
+      "createAt": 1617467328379,
+      "updateAt": 1617467328379
+    },
+    {
+      "id": "31364067-b36e-4d2a-8b88-f108acea4aec",
+      "name": "Car",
+      "createAt": 1617467328379,
+      "updateAt": 1617467328379
+    },
+    {
+      "id": "9e93bb5c-9530-43bf-b423-cd8ab38bc9c8",
+      "name": "Shoes",
+      "createAt": 1617467328379,
+      "updateAt": 1617467328379
     }
-  ]
+  ],
+  "categories": []
 }
