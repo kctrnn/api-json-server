@@ -13,17 +13,17 @@ POST {{baseUrl}}/{{resourceName}}
 Content-Type: application/json
 
 {
-    "name": "Iphone 12"
+    "name": "Macbook Pro"
 }
 
 ###
 
 # @name update
-PATCH {{baseUrl}}/{{resourceName}}/5
+PATCH {{baseUrl}}/{{resourceName}}/BOpPNeM
 Content-Type: application/json
 
 {
-    "name": "Iphone 11 Pro"
+    "name": "Macbook Air"
 }
 
 ###
