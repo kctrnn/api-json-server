@@ -31,7 +31,6 @@ POST {{baseUrl}}/{{resourceName}}
 Content-Type: application/json
 
 {
-    "id": "5",
     "name": "Iphone 12"
 }
 
