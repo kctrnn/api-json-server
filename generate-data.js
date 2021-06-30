@@ -1,5 +1,6 @@
 const faker = require('faker');
 const fs = require('fs');
+const casual = require('casual');
 
 // faker.locale = 'vi';
 
@@ -48,14 +49,38 @@ const randomProductList = (categoryList, numberOfProducts) => {
   return productList;
 };
 
+const randomPostList = (n) => {
+  if (n <= 0) return [];
+
+  const postList = [];
+
+  Array.from(new Array(n)).forEach(() => {
+    const newPost = {
+      id: casual.uuid,
+      title: casual.title,
+      author: casual.full_name,
+      description: casual.words(50),
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      imageUrl: `https://picsum.photos/id/${casual.integer(1, 1000)}/1368/400`,
+    };
+
+    postList.push(newPost);
+  });
+
+  return postList;
+};
+
 // IIFE
 (() => {
   // random data
   const categoryList = randomCategoryList(4);
   const productList = randomProductList(categoryList, 5);
+  const postList = randomPostList(50);
 
   // prepare db object
   const db = {
+    posts: postList,
     products: productList,
     categories: categoryList,
   };
