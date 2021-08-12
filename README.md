@@ -12,7 +12,6 @@
   - `_sort`: Indicate which field should be sorted on
   - `_order`: Indicate sort direction
 
-
 - GET /posts/:postId
 - POST /posts
 - PUT /posts/:postId
@@ -35,3 +34,6 @@
 - POST /categories
 - PUT /categories/:categoryId
 - DELETE /categories/:categoryId
+
+---
+More: https://github.com/typicode/json-server
