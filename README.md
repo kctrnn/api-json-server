@@ -2,7 +2,7 @@
 
 ### Endpoints
 
-/posts
+`/posts`
 
 - GET /posts
 - GET /posts/:postId
@@ -10,7 +10,7 @@
 - PUT /posts/:postId
 - DELETE /posts/:postId
 
-/products
+`/products`
 
 - GET /products
 - GET /products/:productId
@@ -20,7 +20,7 @@
 
 
 
-/categories
+`/categories`
 
 - GET /categories
 - GET /categories/:categoryId
