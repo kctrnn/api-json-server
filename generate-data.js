@@ -1,6 +1,6 @@
-const faker = require("faker");
-const fs = require("fs");
-const casual = require("casual");
+const faker = require('faker');
+const fs = require('fs');
+const casual = require('casual');
 
 // faker.locale = 'vi';
 
@@ -82,8 +82,8 @@ const randomStudentList = (n) => {
       name: casual.full_name,
       age: casual.integer(18, 27),
       mark: Number.parseFloat(casual.double(3, 10).toFixed(1)),
-      gender: ["male", "female"][casual.integer(1, 100) % 2],
-      city: ["hcm", "hn", "dn", "ha", "pt"][casual.integer(1, 100) % 5],
+      gender: ['male', 'female'][casual.integer(1, 100) % 2],
+      city: ['hcm', 'hn', 'dn', 'ha', 'pt'][casual.integer(1, 100) % 5],
 
       createdAt: Date.now(),
       updatedAt: Date.now(),
@@ -97,30 +97,55 @@ const randomStudentList = (n) => {
 
 const cityList = [
   {
-    code: "hcm",
-    name: "Hồ Chí Minh",
+    code: 'hcm',
+    name: 'Hồ Chí Minh',
   },
 
   {
-    code: "hn",
-    name: "Hà Nội",
+    code: 'hn',
+    name: 'Hà Nội',
   },
 
   {
-    code: "dn",
-    name: "Đà Nẵng",
+    code: 'dn',
+    name: 'Đà Nẵng',
   },
 
   {
-    code: "ha",
-    name: "Hội An",
+    code: 'ha',
+    name: 'Hội An',
   },
 
   {
-    code: "pt",
-    name: "Phan Thiết",
+    code: 'pt',
+    name: 'Phan Thiết',
   },
 ];
+
+const randomFoodList = (n) => {
+  if (n <= 0) return [];
+
+  const foodList = [];
+
+  Array.from(new Array(n)).forEach(() => {
+    const newFood = {
+      id: casual.uuid,
+      name: casual.word,
+      note: casual.description,
+      image: 'https://source.unsplash.com/1600x900/?food',
+      category: ['Fruit and vegetables', 'Meat and Fish', 'Beverages', 'Pets'][
+        casual.integer(1, 100) % 4
+      ],
+
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+    };
+
+    foodList.push(newFood);
+  });
+
+  return foodList;
+};
 
 // IIFE
 (() => {
@@ -129,6 +154,7 @@ const cityList = [
   const productList = randomProductList(categoryList, 5);
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
+  const foodList = randomFoodList(21);
 
   // prepare db object
   const db = {
@@ -137,13 +163,14 @@ const cityList = [
     categories: categoryList,
     cities: cityList,
     students: studentList,
+    foods: foodList,
   };
 
   // write db object to db.json
-  fs.writeFile("db.json", JSON.stringify(db), (err) => {
+  fs.writeFile('db.json', JSON.stringify(db), (err) => {
     if (err) {
       return console.log(err);
     }
-    console.log("Generate successfully!");
+    console.log('Generate successfully!');
   });
 })();
