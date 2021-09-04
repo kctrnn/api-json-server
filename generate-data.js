@@ -1,8 +1,83 @@
 const faker = require('faker');
 const fs = require('fs');
 const casual = require('casual');
+const axios = require('axios');
 
-// faker.locale = 'vi';
+// axios client
+const axiosClient = axios.create({
+  baseUrl: 'https://api.thecatapi.com/v1',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Add a request interceptor
+axiosClient.interceptors.request.use(
+  function (config) {
+    return {
+      ...config,
+      headers: {
+        // using The Cat API
+        'x-api-key': '960320f0-7bc3-4c42-b379-38dad0ad1aef',
+        ...config.headers,
+      },
+    };
+  },
+
+  function (error) {
+    // return Promise.reject(error);
+    console.log(error);
+  }
+);
+
+// Add a response interceptor
+axiosClient.interceptors.response.use(
+  function (response) {
+    return response.data;
+  },
+
+  function (error) {
+    // return Promise.reject(error);
+    console.log(error);
+  }
+);
+
+const catApi = {
+  getCatList() {
+    const url = '/breeds';
+    return axiosClient.get(url);
+  },
+};
+
+const mapToCat = (cat) => ({
+  id: cat.id,
+  name: cat.name,
+  description: cat.description,
+
+  origin: cat.origin,
+  temperament: cat.temperament,
+  life_span: cat.life_span,
+
+  adaptability: cat.adaptability,
+  affection_level: cat.affection_level,
+  child_friendly: cat.child_friendly,
+  grooming: cat.grooming,
+  intelligence: cat.intelligence,
+  health_issues: cat.health_issues,
+  social_needs: cat.social_needs,
+  stranger_friendly: cat.stranger_friendly,
+
+  image: {
+    ...cat.image,
+  },
+});
+
+const fetchCatList = async () => {
+  const catList = await catApi.getCatList();
+  const transformedCatList = catList.map(mapToCat);
+
+  return transformedCatList;
+};
 
 const randomCategoryList = (n) => {
   if (n <= 0) return [];
@@ -123,12 +198,13 @@ const cityList = [
 ];
 
 // IIFE
-(() => {
+(async () => {
   // random data
   const categoryList = randomCategoryList(4);
   const productList = randomProductList(categoryList, 5);
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
+  const catList = await fetchCatList();
 
   // prepare db object
   const db = {
@@ -137,6 +213,7 @@ const cityList = [
     categories: categoryList,
     cities: cityList,
     students: studentList,
+    cats: catList,
   };
 
   // write db object to db.json
