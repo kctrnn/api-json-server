@@ -5,39 +5,17 @@ const axios = require('axios');
 
 // axios client
 const axiosClient = axios.create({
-  baseUrl: 'https://api.thecatapi.com/v1',
+  baseURL: 'https://api.thecatapi.com/v1',
   headers: {
-    'Content-Type': 'application/json',
+    'content-type': 'application/json',
   },
 });
 
-// Add a request interceptor
-axiosClient.interceptors.request.use(
-  function (config) {
-    return {
-      ...config,
-      headers: {
-        // using The Cat API
-        'x-api-key': '960320f0-7bc3-4c42-b379-38dad0ad1aef',
-        ...config.headers,
-      },
-    };
-  },
-
-  function (error) {
-    // return Promise.reject(error);
-    console.log(error);
-  }
-);
-
-// Add a response interceptor
 axiosClient.interceptors.response.use(
-  function (response) {
+  (response) => {
     return response.data;
   },
-
-  function (error) {
-    // return Promise.reject(error);
+  (error) => {
     console.log(error);
   }
 );
@@ -70,6 +48,9 @@ const mapToCat = (cat) => ({
   image: {
     ...cat.image,
   },
+
+  createdAt: Date.now(),
+  updatedAt: Date.now(),
 });
 
 const fetchCatList = async () => {
@@ -89,8 +70,8 @@ const randomCategoryList = (n) => {
     const category = {
       id: faker.datatype.uuid(),
       name: faker.commerce.department(),
-      createAt: Date.now(),
-      updateAt: Date.now(),
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     };
 
     categoryList.push(category);
@@ -113,8 +94,8 @@ const randomProductList = (categoryList, numberOfProducts) => {
         price: parseFloat(faker.commerce.price()),
         description: faker.commerce.productDescription(),
         thumbnailUrl: faker.image.imageUrl(),
-        createAt: Date.now(),
-        updateAt: Date.now(),
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
       };
 
       productList.push(newProduct);
@@ -221,6 +202,6 @@ const cityList = [
     if (err) {
       return console.log(err);
     }
-    console.log('Generate successfully!');
+    console.log('Generate data successfully =))');
   });
 })();
