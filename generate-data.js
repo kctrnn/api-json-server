@@ -122,31 +122,6 @@ const cityList = [
   },
 ];
 
-const randomFoodList = (n) => {
-  if (n <= 0) return [];
-
-  const foodList = [];
-
-  Array.from(new Array(n)).forEach(() => {
-    const newFood = {
-      id: casual.uuid,
-      name: casual.word,
-      note: casual.description,
-      image: 'https://source.unsplash.com/1600x900/?food',
-      category: ['Fruit and vegetables', 'Meat and Fish', 'Beverages', 'Pets'][
-        casual.integer(1, 100) % 4
-      ],
-
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
-    };
-
-    foodList.push(newFood);
-  });
-
-  return foodList;
-};
-
 // IIFE
 (() => {
   // random data
@@ -154,7 +129,6 @@ const randomFoodList = (n) => {
   const productList = randomProductList(categoryList, 5);
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
-  const foodList = randomFoodList(21);
 
   // prepare db object
   const db = {
@@ -163,7 +137,6 @@ const randomFoodList = (n) => {
     categories: categoryList,
     cities: cityList,
     students: studentList,
-    foods: foodList,
   };
 
   // write db object to db.json
