@@ -15,6 +15,7 @@ server.get('/echo', (req, res) => {
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser);
+
 server.use((req, res, next) => {
   if (req.method === 'POST') {
     req.body.createdAt = Date.now();
@@ -22,6 +23,7 @@ server.use((req, res, next) => {
   } else if (req.method === 'PATCH') {
     req.body.updatedAt = Date.now();
   }
+
   // Continue to JSON Server router
   next();
 });
@@ -56,6 +58,7 @@ router.render = (req, res) => {
 server.use('/api', router);
 
 const PORT = process.env.PORT || 3000;
+
 server.listen(PORT, () => {
   console.log('JSON Server is running');
 });
