@@ -1,4 +1,3 @@
-const faker = require('faker');
 const fs = require('fs');
 const casual = require('casual');
 const axios = require('axios');
@@ -58,51 +57,6 @@ const fetchCatList = async () => {
   const transformedCatList = catList.map(mapToCat);
 
   return transformedCatList;
-};
-
-const randomCategoryList = (n) => {
-  if (n <= 0) return [];
-
-  const categoryList = [];
-
-  // loop and push category
-  Array.from(new Array(n)).forEach(() => {
-    const category = {
-      id: faker.datatype.uuid(),
-      name: faker.commerce.department(),
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
-    };
-
-    categoryList.push(category);
-  });
-
-  return categoryList;
-};
-
-const randomProductList = (categoryList, numberOfProducts) => {
-  if (numberOfProducts <= 0) return [];
-
-  const productList = [];
-
-  for (const category of categoryList) {
-    Array.from(new Array(numberOfProducts)).forEach(() => {
-      const newProduct = {
-        categoryId: category.id,
-        id: faker.datatype.uuid(),
-        name: faker.commerce.product(),
-        price: parseFloat(faker.commerce.price()),
-        description: faker.commerce.productDescription(),
-        thumbnailUrl: faker.image.imageUrl(),
-        createdAt: Date.now(),
-        updatedAt: Date.now(),
-      };
-
-      productList.push(newProduct);
-    });
-  }
-
-  return productList;
 };
 
 const randomPostList = (n) => {
@@ -236,11 +190,12 @@ const photoList = [
   },
 ];
 
-// IIFE
+// read data from challenge.json
+const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
+
+// MAIN
 (async () => {
   // random data
-  const categoryList = randomCategoryList(4);
-  const productList = randomProductList(categoryList, 5);
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
   const catList = await fetchCatList();
@@ -248,20 +203,17 @@ const photoList = [
   // prepare db object
   const db = {
     posts: postList,
-    products: productList,
-    categories: categoryList,
-    cities: cityList,
     students: studentList,
     cats: catList,
+    cities: cityList,
     photos: photoList,
+    challenges: challengeList,
   };
 
   // write db object to db.json
-  fs.writeFile('db.json', JSON.stringify(db), (err) => {
-    if (err) {
-      return console.log(err);
-    }
-
-    console.log('Generate data successfully =))');
+  fs.writeFile('db.json', JSON.stringify(db), () => {
+    console.log(
+      `${db.posts.length} posts / ${db.students.length} students / ${db.cats.length} cats / ${db.cities.length} cities / ${db.photos.length} photos / ${db.challenges.length} challenges are generated =))`
+    );
   });
 })();
