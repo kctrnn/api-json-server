@@ -190,6 +190,27 @@ const photoList = [
   },
 ];
 
+const meetupList = [
+  {
+    id: casual.uuid,
+    title: 'This is a first meetup',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
+    address: 'Meetup street 5, 12345 Meetup City',
+    description:
+      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+  },
+  {
+    id: casual.uuid,
+    title: 'This is a second meetup',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
+    address: 'Meetup street 5, 12345 Meetup City',
+    description:
+      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+  },
+];
+
 // read data from challenge.json
 const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
 
@@ -208,12 +229,13 @@ const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
     cities: cityList,
     photos: photoList,
     challenges: challengeList,
+    meetups: meetupList,
   };
 
   // write db object to db.json
   fs.writeFile('db.json', JSON.stringify(db), () => {
     console.log(
-      `${db.posts.length} posts / ${db.students.length} students / ${db.cats.length} cats / ${db.cities.length} cities / ${db.photos.length} photos / ${db.challenges.length} challenges are generated =))`
+      `${db.posts.length} posts / ${db.students.length} students / ${db.cats.length} cats / ${db.cities.length} cities / ${db.photos.length} photos / ${db.meetups.length} meetups / ${db.challenges.length} challenges are generated =))`
     );
   });
 })();
