@@ -56,8 +56,8 @@ server.post('/api/login', async (req, res) => {
   }
 
   // validate username and password
-  const { username, password } = req.body;
-  const token = jwt.sign({ sub: username }, PRIVATE_KEY, {
+  const user = req.body;
+  const token = jwt.sign(user, PRIVATE_KEY, {
     expiresIn: SECONDS_PER_DAY,
   });
   const expiredAt = new Date(Date.now() + SECONDS_PER_DAY * 1000).getTime();
@@ -72,6 +72,10 @@ server.post('/api/register', async (req, res) => {
       .string()
       .required('Missing username')
       .min(4, 'username should have at least 4 characters'),
+    name: yup
+      .string()
+      .required('Missing name')
+      .min(6, 'username should have at least 6 characters'),
 
     email: yup
       .string()
@@ -93,8 +97,8 @@ server.post('/api/register', async (req, res) => {
   }
 
   // validate username and password
-  const { username, password } = req.body;
-  const token = jwt.sign({ sub: username }, PRIVATE_KEY, {
+  const user = req.body;
+  const token = jwt.sign(user, PRIVATE_KEY, {
     expiresIn: SECONDS_PER_DAY,
   });
   const expiredAt = new Date(Date.now() + SECONDS_PER_DAY * 1000).getTime();
@@ -132,9 +136,9 @@ server.get('/api/profile', protectedRoute, (req, res) => {
     const payload = jwt.decode(accessToken);
 
     return res.status(200).json({
-      username: payload.sub,
-      name: casual.full_name,
-      email: casual.email.toLowerCase(),
+      username: payload.username,
+      name: payload.name || '',
+      email: payload.email || '',
     });
   } catch (error) {
     console.log('failed to parse token', error);
