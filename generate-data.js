@@ -1,10 +1,11 @@
 const fs = require('fs');
 const casual = require('casual');
 const axios = require('axios');
+const uniqid = require('uniqid');
 
 // axios client
 const axiosClient = axios.create({
-  baseURL: 'https://api.thecatapi.com/v1',
+  baseURL: 'https://mapi.sendo.vn/mob',
   headers: {
     'content-type': 'application/json',
   },
@@ -19,44 +20,102 @@ axiosClient.interceptors.response.use(
   }
 );
 
-const catApi = {
-  getCatList() {
-    const url = '/breeds';
+const productApi = {
+  getAll(queryParams) {
+    const url = '/product/search';
+    return axiosClient.get(url, { params: queryParams });
+  },
+
+  get(productId) {
+    const url = `/product/${productId}/detail`;
     return axiosClient.get(url);
   },
 };
 
-const mapToCat = (cat) => ({
-  id: cat.id,
-  name: cat.name,
-  description: cat.description,
-
-  origin: cat.origin,
-  temperament: cat.temperament,
-  life_span: cat.life_span,
-
-  adaptability: cat.adaptability,
-  affection_level: cat.affection_level,
-  child_friendly: cat.child_friendly,
-  grooming: cat.grooming,
-  intelligence: cat.intelligence,
-  health_issues: cat.health_issues,
-  social_needs: cat.social_needs,
-  stranger_friendly: cat.stranger_friendly,
-
-  image: {
-    ...cat.image,
+// https://techinsight.com.vn/tai-lieu-huong-dan-su-dung-api-vietnam-ai-hackathon
+const categoryList = [
+  {
+    id: uniqid(),
+    name: 'Thời trang',
+    searchTerm: 'ao so mi nu',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
   },
+  {
+    id: uniqid(),
+    name: 'Khẩu trang',
+    searchTerm: 'khau trang',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  },
+  {
+    id: uniqid(),
+    name: 'Làm đẹp',
+    searchTerm: 'lam dep',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  },
+  {
+    id: uniqid(),
+    name: 'Laptop',
+    searchTerm: 'macbook',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  },
+  {
+    id: uniqid(),
+    name: 'Ổ cứng',
+    searchTerm: 'o cung ssd',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  },
+  {
+    id: uniqid(),
+    name: 'Điện thoại',
+    searchTerm: 'iphone',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  },
+];
 
+const S3_IMAGE_URL = 'https://media3.scdn.vn';
+const mapToProduct = (product) => ({
+  id: product.id,
+  name: product.name,
+  shortDescription: product.short_description,
+  description: product.description,
+  originalPrice: product.price,
+  salePrice: product.final_price,
+  isPromotion: product.is_promotion,
+  promotionPercent: product.promotion_percent,
+  images: product.images.map((url) => `${S3_IMAGE_URL}${url}`),
+  isFreeShip: product.is_free_ship,
   createdAt: Date.now(),
   updatedAt: Date.now(),
 });
 
-const fetchCatList = async () => {
-  const catList = await catApi.getCatList();
-  const transformedCatList = catList.map(mapToCat);
+const fetchProductList = async () => {
+  const productList = [];
 
-  return transformedCatList;
+  for (const category of categoryList) {
+    const queryParams = {
+      p: 1,
+      q: category.searchTerm,
+    };
+
+    const { data } = await productApi.getAll(queryParams);
+    const productIdList = data.slice(0, 20).map((item) => item.id);
+
+    for (const productId of productIdList) {
+      const product = await productApi.get(productId);
+      const transformedProduct = mapToProduct(product);
+      transformedProduct.categoryId = category.id;
+
+      productList.push(transformedProduct);
+    }
+  }
+
+  return productList;
 };
 
 const randomPostList = (n) => {
@@ -228,22 +287,25 @@ const meetupList = [
   // random data
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
-  const catList = await fetchCatList();
+  const productList = await fetchProductList();
 
   // prepare db object
   const db = {
     posts: postList,
     students: studentList,
-    cats: catList,
     cities: cityList,
+
     photos: photoList,
     meetups: meetupList,
+
+    categories: categoryList,
+    products: productList,
   };
 
   // write db object to db.json
   fs.writeFile('db.json', JSON.stringify(db), () => {
     console.log(
-      `${db.posts.length} posts / ${db.students.length} students / ${db.cats.length} cats / ${db.cities.length} cities / ${db.photos.length} photos / ${db.meetups.length} meetups are generated =))`
+      `${db.posts.length} posts / ${db.students.length} students / ${db.products.length} products / ${db.categories.length} categories / ${db.cities.length} cities / ${db.photos.length} photos / ${db.meetups.length} meetups are generated =))`
     );
   });
 })();
