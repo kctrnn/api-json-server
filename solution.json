@@ -13,8 +13,7 @@
     "submitted": true,
     "submittedAt": 1638690110245,
     "feedbacks": [],
-    "votes": ["61ae2b988cddc7965c07d052"],
-    "__v": 0
+    "votes": ["61ae2b988cddc7965c07d052"]
   },
   {
     "_id": "61883df579953be7eb307358",
@@ -41,7 +40,6 @@
         "_id": "61ae54fb46b6749070b75d60"
       }
     ],
-    "votes": ["61abae1a044a4d65da41721d"],
-    "__v": 0
+    "votes": ["61abae1a044a4d65da41721d"]
   }
 ]
