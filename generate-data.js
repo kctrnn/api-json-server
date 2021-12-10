@@ -20,6 +20,8 @@ axiosClient.interceptors.response.use(
   }
 );
 
+// ==============================
+
 const productApi = {
   getAll(queryParams) {
     const url = '/product/search';
@@ -32,7 +34,6 @@ const productApi = {
   },
 };
 
-// https://techinsight.com.vn/tai-lieu-huong-dan-su-dung-api-vietnam-ai-hackathon
 const categoryList = [
   {
     id: uniqid(),
@@ -117,6 +118,8 @@ const fetchProductList = async () => {
 
   return productList;
 };
+
+// ==============================
 
 const randomPostList = (n) => {
   if (n <= 0) return [];
@@ -279,8 +282,10 @@ const meetupList = [
   },
 ];
 
-// read data from challenge.json
-// const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
+// read data json file
+const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
+const solutionList = JSON.parse(fs.readFileSync('solution.json', 'utf8'));
+const userList = JSON.parse(fs.readFileSync('user.json', 'utf8'));
 
 // MAIN
 (async () => {
@@ -300,12 +305,27 @@ const meetupList = [
 
     categories: categoryList,
     products: productList,
+
+    challenges: challengeList,
+    solutions: solutionList,
+    users: userList,
   };
 
   // write db object to db.json
   fs.writeFile('db.json', JSON.stringify(db), () => {
     console.log(
-      `${db.posts.length} posts / ${db.students.length} students / ${db.products.length} products / ${db.categories.length} categories / ${db.cities.length} cities / ${db.photos.length} photos / ${db.meetups.length} meetups are generated =))`
+      `
+      ${db.posts.length} posts / 
+      ${db.students.length} students / 
+      ${db.cities.length} cities / 
+      ${db.photos.length} photos / 
+      ${db.products.length} products / 
+      ${db.categories.length} categories / 
+      ${db.meetups.length} meetups / 
+      ${db.challenges.length} challenges / 
+      ${db.solutions.length} solutions / 
+      ${db.users.length} users are generated =))
+      `
     );
   });
 })();

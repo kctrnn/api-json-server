@@ -7,7 +7,6 @@ const middlewares = jsonServer.defaults();
 
 const yup = require('yup');
 const jwt = require('jsonwebtoken');
-const casual = require('casual');
 
 const PORT = process.env.PORT || 3000;
 const PRIVATE_KEY = 'ae9468ec-c1fe-4cce-9772-cd899a2b496a';
