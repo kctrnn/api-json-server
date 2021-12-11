@@ -1,6 +1,6 @@
 [
   {
-    "_id": "6186b6d641d18358ebf3910b",
+    "id": "6186b6d641d18358ebf3910b",
     "level": 0,
     "order": 0,
     "pathSlug": "responsive-web-developer",
@@ -13,7 +13,7 @@
     "description": "This challenge is suitable for you if you just started with coding. The challenge will test your basic CSS and HTML skills."
   },
   {
-    "_id": "6186b6d641d18358ebf39105",
+    "id": "6186b6d641d18358ebf39105",
     "description": "This challenge will test your basic CSS skills and get it to next level. You will work with basic HTML element to make a simple but yet elegant team page.",
     "brief": "**Challenge:** Create my team page following the design. The page should be responsive. Don’t look at the existing solution. Fulfill user stories below\n\n- **User story:** I can see a page following the given design ",
     "name": "My team page",
@@ -26,7 +26,7 @@
     "designId": "F8d1qJsorEdY47N74HLxQ4"
   },
   {
-    "_id": "6186b6d641d18358ebf390fb",
+    "id": "6186b6d641d18358ebf390fb",
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FinteriorConsultantThumbnail.png?alt=media&token=fb5f8229-8eb9-4d70-b0d4-fbd2829a0cf0",
     "resourceId": "interior-consultant",
     "brief": "**Challenge:** Create a homepage following the design. The page should be responsive. Don’t look at the existing solution. Fulfill user stories below:\n\n- **User story:** I can see a page following the given design\n- **User story:** On mobile, I can see a collapsed navigation\n- **User story:** On mobile, when I select the hamburger menu, I can see a navigation\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)",
@@ -39,7 +39,7 @@
     "description": "Your challenge is to create a simple interior consultant homepage. This challenge will test your skill in styling navigation and positioning."
   },
   {
-    "_id": "6186b6d641d18358ebf390fe",
+    "id": "6186b6d641d18358ebf390fe",
     "tags": ["Responsive"],
     "order": 3,
     "level": 0,
@@ -52,7 +52,7 @@
     "brief": "**Challenge:** Create a recipe page following the given design. You can use your own recipe and remember to put the source. The page should be responsive. Don’t look at the existing solutions. Fulfill user stories below:\n\n- **User story:** I can see a recipe with ingredients and instructions\n- **User story:** I can select a checkbox if I have the ingredients\n- **User story:** I can see the number of servings, baking times\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)"
   },
   {
-    "_id": "6186b6d641d18358ebf39103",
+    "id": "6186b6d641d18358ebf39103",
     "tags": ["Responsive"],
     "brief": "**Challenge:** Create a static page with HTML and CSS following the designs. You can give it your personal styles by using different images or text. Don’t look at the existing solution. Fulfill user stories below\n\n- **User story:**  I can see a page following the given design",
     "description": "Inspired by instagram, in this challenge you will work with a similar design to instagram profile page.",
@@ -65,7 +65,7 @@
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FGalleryThumbnail.png?alt=media&token=92894792-41d1-4d99-8cbb-e828322c87fd"
   },
   {
-    "_id": "6186b6d641d18358ebf390f6",
+    "id": "6186b6d641d18358ebf390f6",
     "name": "Checkout Page",
     "description": "In this challenge, you will work with the form in a modern and minimal design. The challenge will bring your HTML and CSS to a new level. ",
     "tags": ["Responsive"],
@@ -78,7 +78,7 @@
     "resourceId": "checkout-page"
   },
   {
-    "_id": "6186b6d641d18358ebf39108",
+    "id": "6186b6d641d18358ebf39108",
     "tags": ["Front-end", "Design system"],
     "order": 0,
     "name": "Button component",
@@ -91,7 +91,7 @@
     "description": "One of the best ways to learn front-end libraries is to create a reusable component. In this challenge, your task is to create a reusable button."
   },
   {
-    "_id": "6186b6d641d18358ebf390ff",
+    "id": "6186b6d641d18358ebf390ff",
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FInputThumbnail.png?alt=media&token=73685593-9026-42a6-8c68-00243071250e",
     "pathSlug": "front-end-developer",
     "name": "Input component",
@@ -104,7 +104,7 @@
     "resourceId": "input-component"
   },
   {
-    "_id": "6186b6d641d18358ebf390f7",
+    "id": "6186b6d641d18358ebf390f7",
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FwindbnbThumbnail.png?alt=media&token=183d7d36-d216-4d30-9732-aa6e4ab0e8a5",
     "order": 3,
     "tags": ["Front-end"],
@@ -117,7 +117,7 @@
     "brief": "**Challenge:** Create a small version of Airbnb - Windbnb with given data. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:\n\n- **User story:** I can see a list of properties \n- **User story:** I can see the property card with a name, rating, apartment type, and super host\n- **User story:** I can open the filter drawer\n- **User story:** I can filter properties by location and number of guests\n- **User story:** I can see the number of filtered items\n- **User story:** I can see pages following given designs\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)"
   },
   {
-    "_id": "6186b6d641d18358ebf39104",
+    "id": "6186b6d641d18358ebf39104",
     "designId": "SClDA1weEGA3Mo8Is8Sbf2",
     "order": 4,
     "resourceId": "todo-app",
@@ -130,7 +130,7 @@
     "brief": "**Challenge:** Create a todo app following given designs. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:\n\n- **User story:** I can add a new task\n- **User story:** I can complete a task\n- **User story:** I can toggle between `All`, `Active` and `Completed`\n- **User story:** I can remove one or all tasks under the `Completed` tab\n- **User story (optional):** Store the data in local storage that when I refresh the page I can still see my progress\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)"
   },
   {
-    "_id": "6186b6d641d18358ebf390f9",
+    "id": "6186b6d641d18358ebf390f9",
     "name": "Random quote generator",
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FquoteThumbnail.png?alt=media&token=156a0ff0-506a-4246-8422-eb1cedab5116",
     "brief": "**Challenge:** Create a quote generator app. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:\n\n- **User story:** I can see a random quote\n- **User story:** I generate a new random quote\n- **User story:** When I select quote author, I can see a list of quotes from them\n- **User story:** I can see quote genre under the author\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)\n\n**API:** [https://pprathameshmore.github.io/QuoteGarden/](https://pprathameshmore.github.io/QuoteGarden/)",
@@ -143,7 +143,7 @@
     "pathSlug": "front-end-developer"
   },
   {
-    "_id": "6186b6d641d18358ebf3910d",
+    "id": "6186b6d641d18358ebf3910d",
     "designId": "ahnGupP4JjTdVJDTRfMRF2",
     "pathSlug": "responsive-web-developer",
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FEdieHomageThumbnail.png?alt=media&token=72c573b5-6389-425c-b947-de63f0f5b2ef",
@@ -156,7 +156,7 @@
     "name": "Edie homepage"
   },
   {
-    "_id": "6186b6d641d18358ebf390fa",
+    "id": "6186b6d641d18358ebf390fa",
     "resourceId": "country-quiz",
     "name": "Country quiz",
     "pathSlug": "front-end-developer",
@@ -169,7 +169,7 @@
     "order": 1
   },
   {
-    "_id": "6186b6d641d18358ebf39107",
+    "id": "6186b6d641d18358ebf39107",
     "tags": ["Front-end", "API"],
     "level": 2,
     "order": 2,
@@ -182,7 +182,7 @@
     "designId": "5X3Ao3gEqZPqqKctP7riDF"
   },
   {
-    "_id": "6186b6d641d18358ebf39100",
+    "id": "6186b6d641d18358ebf39100",
     "resourceId": "github-jobs",
     "pathSlug": "front-end-developer",
     "tags": ["Front-end", "API"],
@@ -195,7 +195,7 @@
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FJobSearchThumbnail.png?alt=media&token=59d40095-f280-478f-a8c9-dc9d49f14471"
   },
   {
-    "_id": "6186b6d641d18358ebf390f8",
+    "id": "6186b6d641d18358ebf390f8",
     "tags": ["Responsive"],
     "designId": "O7Omgz2iVR7Vox7shf7O8e",
     "resourceId": "portfolio",
@@ -208,7 +208,7 @@
     "description": "A portfolio is the most important certificate when applying to a job. In this challenge, you will create a beautiful portfolio page."
   },
   {
-    "_id": "6186b6d641d18358ebf390fd",
+    "id": "6186b6d641d18358ebf390fd",
     "name": "Image Uploader",
     "description": "In this challenge, you will create a simple but useful application - Image Uploader. This challenge will be the foundation for many other full-stack challenges.",
     "designId": "NxbZm3CAovYh89dFXe7EOw",
@@ -221,7 +221,7 @@
     "level": 2
   },
   {
-    "_id": "6186b6d641d18358ebf39109",
+    "id": "6186b6d641d18358ebf39109",
     "order": 1,
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FMyUnsplashThumnail.png?alt=media&token=c5b12585-454b-4a68-9b3c-356a8a643d9f",
     "pathSlug": "full-stack-developer",
@@ -234,7 +234,7 @@
     "description": "This is the first challenge in the Full-stack path. You will create a basic API and create Unsplash-inspired design"
   },
   {
-    "_id": "6186b6d641d18358ebf39102",
+    "id": "6186b6d641d18358ebf39102",
     "pathSlug": "full-stack-developer",
     "description": "Are you a cat lover? You want to know more about cat breeds and check out an amazing collection of cat photos, this is the challenge for you.",
     "resourceId": "cat-wiki",
@@ -247,7 +247,7 @@
     "thumbnailImage": "https://firebasestorage.googleapis.com/v0/b/devchallenges-1234.appspot.com/o/challengesDesigns%2FCatWikiThumnail.png?alt=media&token=aaa3deb0-dae2-44c5-b90d-420858c0ca40"
   },
   {
-    "_id": "6186b6d641d18358ebf390fc",
+    "id": "6186b6d641d18358ebf390fc",
     "brief": "**Challenge:** Create an Authentication app. Use any front-end libraries of your choice. Create your API. Don’t look at the existing solution. Fulfill user stories below:\n\n- **User story:** I can register a new account\n- **User story:** I can log in\n- **User story:** I can log in or register with at least one of the following services: `Google`, `Facebook`, `Twitter` or `Github`\n- **User story:** I can sign out\n- **User story:** I can see my profile details\n- **User story:** I can edit my details including: `photo`, `name`, `bio`, `phone`, `email` and `password`\n- **User story:** I can upload a new photo or provide an image URL\n\n**Icon:** [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)",
     "description": "In this challenge, you will get yourself familiar with authentication and handling user data. This will be a foundation for the next challenges. ",
     "level": 3,
@@ -260,7 +260,7 @@
     "designId": "ZM0DPZbzK39o3rqwiaOPTD"
   },
   {
-    "_id": "6186b6d641d18358ebf39106",
+    "id": "6186b6d641d18358ebf39106",
     "pathSlug": "full-stack-developer",
     "name": "Shoppingify",
     "tags": ["Full-stack"],
@@ -273,7 +273,7 @@
     "order": 0
   },
   {
-    "_id": "6186b6d641d18358ebf39101",
+    "id": "6186b6d641d18358ebf39101",
     "pathSlug": "full-stack-developer",
     "name": "Chat Group",
     "designId": "0oMeogZV0wD6Ml69HDrF66",
@@ -286,7 +286,7 @@
     "description": "Everyone send and receive texts every day. In this challenge, you will create a chat app. It will be challenging but fun at the same time."
   },
   {
-    "_id": "6186b6d641d18358ebf3910a",
+    "id": "6186b6d641d18358ebf3910a",
     "order": 1,
     "tags": ["Full-stack"],
     "name": "Tweeter - Twitter Clone",
@@ -299,7 +299,7 @@
     "description": "Recreating Twitter, the task sounds intimidating. But trust me, you will learn and have a lot of fun doing this. This challenge is a simple version of Twitter, it will test your skill in both Front-end and Back-end at a high level."
   },
   {
-    "_id": "6186b6d641d18358ebf3910c",
+    "id": "6186b6d641d18358ebf3910c",
     "description": "This is the last and the most challenging challenge in the stack path. You will take what you learned in the previous challenge to apply to this one.",
     "name": "Thullo - Trello Clone",
     "order": 2,

@@ -1,6 +1,6 @@
 [
   {
-    "_id": "61abae1a044a4d65da41721d",
+    "id": "61abae1a044a4d65da41721d",
     "name": "Under The Hood",
     "username": "underthehood",
     "email": "underthehood@gmail.com",
@@ -9,7 +9,7 @@
   },
 
   {
-    "_id": "61ae2b988cddc7965c07d052",
+    "id": "61ae2b988cddc7965c07d052",
     "name": "Kim Chan",
     "username": "kctrnn",
     "email": "kctrnn@gmail.com",
@@ -18,7 +18,7 @@
   },
 
   {
-    "_id": "61af2560f0a88816fdeaf0c2",
+    "id": "61af2560f0a88816fdeaf0c2",
     "name": "Tommy Teo",
     "username": "tommyteo",
     "email": "tommyteo@gmail.com",

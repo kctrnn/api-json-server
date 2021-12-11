@@ -1,6 +1,6 @@
 [
   {
-    "_id": "61ac5c4a7ad4997dafd9b7fa",
+    "id": "61ac5c4a7ad4997dafd9b7fa",
     "title": "Interior Consultant",
     "description": "- HTML\n- CSS\n- JS",
     "demoUrl": "https://interior-consultant-kctrnn.netlify.app/",
@@ -16,7 +16,7 @@
     "votes": ["61ae2b988cddc7965c07d052"]
   },
   {
-    "_id": "61883df579953be7eb307358",
+    "id": "61883df579953be7eb307358",
     "title": "Todo app",
     "description": "My todo app is built with Reactjs",
     "demoUrl": "https://todo-app-redux-kctrnn.netlify.app",
@@ -32,12 +32,12 @@
       {
         "userId": "61abae1a044a4d65da41721d",
         "message": "This is so cool!",
-        "_id": "61ae54a546b6749070b75d4e"
+        "id": "61ae54a546b6749070b75d4e"
       },
       {
         "userId": "61abae1a044a4d65da41721d",
         "message": "Something like this",
-        "_id": "61ae54fb46b6749070b75d60"
+        "id": "61ae54fb46b6749070b75d60"
       }
     ],
     "votes": ["61abae1a044a4d65da41721d"]
