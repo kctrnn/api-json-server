@@ -282,11 +282,6 @@ const meetupList = [
   },
 ];
 
-// read data json file
-const challengeList = JSON.parse(fs.readFileSync('challenge.json', 'utf8'));
-const solutionList = JSON.parse(fs.readFileSync('solution.json', 'utf8'));
-const userList = JSON.parse(fs.readFileSync('user.json', 'utf8'));
-
 // MAIN
 (async () => {
   // random data
@@ -305,10 +300,6 @@ const userList = JSON.parse(fs.readFileSync('user.json', 'utf8'));
 
     categories: categoryList,
     products: productList,
-
-    challenges: challengeList,
-    solutions: solutionList,
-    users: userList,
   };
 
   // write db object to db.json
@@ -321,10 +312,7 @@ const userList = JSON.parse(fs.readFileSync('user.json', 'utf8'));
       ${db.photos.length} photos / 
       ${db.products.length} products / 
       ${db.categories.length} categories / 
-      ${db.meetups.length} meetups / 
-      ${db.challenges.length} challenges / 
-      ${db.solutions.length} solutions / 
-      ${db.users.length} users are generated =))
+      ${db.meetups.length} meetups 🎉
       `
     );
   });
