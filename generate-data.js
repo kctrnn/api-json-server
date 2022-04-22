@@ -1,38 +1,9 @@
 const fs = require('fs');
 const casual = require('casual');
-const axios = require('axios');
 const uniqid = require('uniqid');
 
-// axios client
-const axiosClient = axios.create({
-  baseURL: 'https://mapi.sendo.vn/mob',
-  headers: {
-    'content-type': 'application/json',
-  },
-});
-
-axiosClient.interceptors.response.use(
-  (response) => {
-    return response.data;
-  },
-  (error) => {
-    console.log(error);
-  }
-);
-
-// ==============================
-
-const productApi = {
-  getAll(queryParams) {
-    const url = '/product/search';
-    return axiosClient.get(url, { params: queryParams });
-  },
-
-  get(productId) {
-    const url = `/product/${productId}/detail`;
-    return axiosClient.get(url);
-  },
-};
+const { mapToProduct } = require('./utils');
+const productApi = require('./api/product-api');
 
 const categoryList = [
   {
@@ -78,22 +49,6 @@ const categoryList = [
     updatedAt: Date.now(),
   },
 ];
-
-const S3_IMAGE_URL = 'https://media3.scdn.vn';
-const mapToProduct = (product) => ({
-  id: product.id,
-  name: product.name,
-  shortDescription: product.short_description,
-  description: product.description,
-  originalPrice: product.price,
-  salePrice: product.final_price,
-  isPromotion: product.is_promotion,
-  promotionPercent: product.promotion_percent,
-  images: product.images.map((url) => `${S3_IMAGE_URL}${url}`),
-  isFreeShip: product.is_free_ship,
-  createdAt: Date.now(),
-  updatedAt: Date.now(),
-});
 
 const fetchProductList = async () => {
   const productList = [];
@@ -168,30 +123,11 @@ const randomStudentList = (n) => {
 };
 
 const cityList = [
-  {
-    code: 'hcm',
-    name: 'Hồ Chí Minh',
-  },
-
-  {
-    code: 'hn',
-    name: 'Hà Nội',
-  },
-
-  {
-    code: 'dn',
-    name: 'Đà Nẵng',
-  },
-
-  {
-    code: 'ha',
-    name: 'Hội An',
-  },
-
-  {
-    code: 'pt',
-    name: 'Phan Thiết',
-  },
+  { code: 'hcm', name: 'Hồ Chí Minh' },
+  { code: 'hn', name: 'Hà Nội' },
+  { code: 'dn', name: 'Đà Nẵng' },
+  { code: 'ha', name: 'Hội An' },
+  { code: 'pt', name: 'Phan Thiết' },
 ];
 
 const photoList = [
