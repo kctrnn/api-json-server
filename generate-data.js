@@ -6,6 +6,7 @@ const categoryList = require('./mock/category');
 const cityList = require('./mock/city');
 const meetupList = require('./mock/meetup');
 const photoList = require('./mock/photo');
+const userList = require('./mock/user');
 
 const fetchProductList = async () => {
   const productList = [];
@@ -82,7 +83,8 @@ const randomStudentList = (n) => {
   // random data
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
-  const productList = await fetchProductList();
+  // const productList = await fetchProductList();
+  const productList = [];
 
   // prepare db object
   const db = {
@@ -95,6 +97,8 @@ const randomStudentList = (n) => {
 
     categories: categoryList,
     products: productList,
+
+    users: userList,
   };
 
   // write db object to db.json
@@ -107,7 +111,8 @@ const randomStudentList = (n) => {
       ${db.photos.length} photos / 
       ${db.products.length} products / 
       ${db.categories.length} categories / 
-      ${db.meetups.length} meetups 🎉
+      ${db.meetups.length} meetups /
+      ${db.users.length} users 🤪
       `
     );
   });
