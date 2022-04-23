@@ -83,8 +83,7 @@ const randomStudentList = (n) => {
   // random data
   const postList = randomPostList(50);
   const studentList = randomStudentList(50);
-  // const productList = await fetchProductList();
-  const productList = [];
+  const productList = await fetchProductList();
 
   // prepare db object
   const db = {

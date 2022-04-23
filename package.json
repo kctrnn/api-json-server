@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
     "casual": "^1.6.2",
     "dotenv": "^10.0.0",
     "json-server": "^0.16.3",
