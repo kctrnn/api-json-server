@@ -1,7 +1,8 @@
+require('dotenv').config();
 const axiosClient = require('./axios-client');
 
 const config = {
-  baseURL: 'http://localhost:3000/api/',
+  baseURL: process.env.HOST || 'http://localhost:3000/api',
 };
 
 const userApi = {
